@@ -25,10 +25,20 @@ const reset = () => {
 }
 
 const alert = () => {
-  swal("Su resultado fue correcto")
+  swal({
+    title:"Su resultado fue Correcto",
+    text: `la suma es : ${result}`,
+    icon:"success", 
+    button:"salir" 
+  })
 }
 const alertFalse = () => {
-  swal("Su resultado fue incorrecto")
+  swal({
+    title:"Su resultado fue Incorrecto",
+    text: `la suma es : ${result}`,
+    icon:"error", 
+    button:"salir" 
+  })
 }
 
 
@@ -43,22 +53,26 @@ const alertFalse = () => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
 
-        <h1>Sistema Multimedia</h1>
+        <h1>Proyecto de Suma con React y Vite</h1>
       </div>
-      <h2>count is {count}</h2>
-      <h2>count is {count2}</h2>
+      <h2>Primera cifra: {count}</h2>
+      <h2>Segunda cifra: {count2}</h2>
+      <div>
+        <button className="btn2" onClick={suma}>
+            Sumar
+        </button>
+      </div>
+      
+
       <button className="btn" onClick={alert}>{result}</button>
       <button className="btn" onClick={alertFalse}>{resultFalse}</button>
       <button className="btn" onClick={alertFalse}>{resultFalse2}</button>
       <div className="card">
         <button className="btn2" onClick={() => setCount((count) => count + 1)}>
-          Cambia la primera cifra 
+          Cambia el valor de la primera cifra 
         </button>
         <button className="btn2" onClick={() => setCount2((count2) => count2 + 2)}>
-          Cambia la segunda cifra
-        </button>
-        <button className="btn2" onClick={suma}>
-          Sumar
+          Cambia el valor de la segunda cifra
         </button>
         <button className="btn2" onClick={reset}>
           Reset
@@ -66,7 +80,7 @@ const alertFalse = () => {
         
       </div>
       <p className="read-the-docs">
-        Sistema multimedia Richard Sanchez todos lod derechos reservados
+        Sistema multimedia Doang Cespedes todos lod derechos reservados
       </p>
     </div>
   )
